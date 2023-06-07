@@ -51,6 +51,7 @@ button:active {
   background: linear-gradient(45deg, #e66465, #9198e5);
   padding: 10px;
   perspective: 1000px;
+  border-radius: 10px;
 }
 
 input {
