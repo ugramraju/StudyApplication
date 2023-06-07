@@ -100,6 +100,7 @@ button {
 @media (max-width: 1560px) {
   .heading_home_box{
     font-size: 3em;
+    top:35vh;
   }
   .createAccount {
     margin-top: 3em;
