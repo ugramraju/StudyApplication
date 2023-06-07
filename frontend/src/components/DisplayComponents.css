@@ -1,0 +1,267 @@
+.Display_component_subject {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2em;
+  margin: 2em;
+}
+
+body {
+  background-color: plum;
+}
+
+.fileContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center items horizontally */
+  justify-content: center;
+  /* Center items vertically */
+  margin: auto;
+  width: 100%;
+}
+
+.card {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 1px 3px 6px 3px #00000029;
+  border-radius: 4px;
+  opacity: 1;
+  text-align: left;
+  padding: 10%;
+  width: 70%;
+}
+
+.opnbtn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  z-index: 1;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 60%;
+  border: none;
+  cursor: pointer;
+}
+
+.iframe_image_container {
+  position: relative;
+  width: 10%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  width: 1000%;
+
+}
+
+.deletebtn {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5%;
+  border: none;
+  cursor: pointer;
+}
+
+.submitbtn1::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.submitbtn1::before {
+  content: "Choose File";
+
+}
+
+.submitbtn {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 30%;
+  height: 1em;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  padding-bottom: 2em;
+}
+
+.submitbtn2 {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 10em;
+  height: 1.5em;
+  border: none;
+  cursor: pointer;
+}
+
+.submitbtn1 {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 5px;
+  width: 30%;
+  height: 1em;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7em;
+}
+
+.heading_search_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3em;
+  background-color: palevioletred;
+}
+
+.SearchBar>input {
+  font-size: 1em;
+  color: #070606;
+  width: 15em;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 1.5em;
+}
+
+@media screen and (max-width: 1340px) {
+  .Display_component_subject {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .submittedfiles_text {
+    font-size: 1.5em;
+  }
+
+  .submitbtn {
+    font-size: 1.2em;
+    padding: 1em;
+    padding-bottom: 2em;
+  }
+
+  .submitbtn1 {
+    font-size: 1.2em;
+    padding: 1em;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Display_component_subject {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .SearchBar>input {
+    font-size: 0.8em;
+    color: #070606;
+    width: 12em;
+    height: 1.5em;
+  }
+
+  .submitbtn2 {
+    font-size: 0.8em;
+    width: 8em;
+    height: 1.5em;
+  }
+
+  .submittedfiles_text {
+    font-size: 1em;
+  }
+
+  .submitbtn {
+    font-size: 0.8em;
+    padding: 1em;
+    padding-bottom: 2em;
+  }
+
+  .submitbtn1 {
+    font-size: 0.8em;
+    padding: 1em
+  }
+
+  .file-submit_btn-Container {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .submitbtn {
+    width: 50%
+  }
+
+  .submitbtn1 {
+    width: 50%
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .Display_component_subject {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .submitbtn {
+    width: 70%
+  }
+
+  .submitbtn1 {
+    width: 70%
+  }
+
+  .heading_search_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    width: 50%;
+  }
+
+  iframe {
+    width: 1000%;
+
+  }
+
+  .iframe_image_container {
+    width: 10%;
+  }
+
+  .deletebtn {
+
+    font-size: 1em;
+
+  }
+
+  .opnbtn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font-size: 0.7em;
+  }
+}
+.pagination >button{
+  background-color: blue;
+  color: #FFFFFF;
+  margin: 2px;
+  border: none;
+  font-size: 1.5em;
+}
