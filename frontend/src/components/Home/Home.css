@@ -41,6 +41,7 @@ button:active {
 .heading_home_box {
   position: absolute;
   top: 42vh;
+  left: 10%;
   color: rgb(22, 188, 58);
   width: 28%;
   font-size: 5em;
