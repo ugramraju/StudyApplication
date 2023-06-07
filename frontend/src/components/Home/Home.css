@@ -119,10 +119,11 @@ button {
   }
   .heading_home_box {
     top: 5vh;
-    right: 10%;
     width: 80%;
     border-radius: 5px;
-
+    display: flex;
+    justify-content: center;
+    align-self: center;
   }
   .createAccount {
     margin-top: 5em;
