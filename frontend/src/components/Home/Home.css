@@ -113,7 +113,9 @@ button {
     width: 80%;
   }
   .login_register_btn {
-    margin-bottom: 0;
+    margin-top: 8%;
+    margin-bottom: 2%;
+
   }
   .heading_home_box {
     top: 5vh;
