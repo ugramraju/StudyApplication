@@ -22,7 +22,7 @@ const UserSignUp = () => {
     }
 
     axios
-      .post("http://localhost:8000/api/student/register", data)
+      .post("https://studyapplication.onrender.com/api/student/register", data)
       .then((res) => {
         setData({});
         setErrorMsg("");

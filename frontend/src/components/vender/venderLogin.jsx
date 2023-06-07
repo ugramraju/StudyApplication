@@ -16,7 +16,7 @@ const VenderLogin = () => {
     }
 
     axios
-      .post("http://localhost:8000/api/teacher/login", data)
+      .post("https://studyapplication.onrender.com/api/teacher/login", data)
       .then((res) => {
         setData({});
         setErrorMsg("");

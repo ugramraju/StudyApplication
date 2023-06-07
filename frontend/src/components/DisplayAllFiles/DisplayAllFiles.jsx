@@ -14,7 +14,7 @@ const DisplayAllComponent = () => {
 
   const fetchProposals = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/getproposals');
+      const response = await axios.get('https://studyapplication.onrender.com/api/getproposals');
       const proposalData = response.data.data;
       setSubmittedFiles(proposalData);
     } catch (error) {

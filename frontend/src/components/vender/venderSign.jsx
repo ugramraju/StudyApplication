@@ -22,7 +22,7 @@ const VenderSignup = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/teacher/register", data);
+      const response = await axios.post("https://studyapplication.onrender.com/api/teacher/register", data);
       setData({});
       setErrorMsg("");
       setSuccessMsg("Registration successful. Please go and sign in.");

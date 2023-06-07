@@ -17,7 +17,7 @@ const DisplayComponent = () => {
 
   const fetchProposals = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/proposals', {
+      const response = await axios.get('https://studyapplication.onrender.com/api/proposals', {
         headers: {
           'x-token': token,
         }
@@ -27,7 +27,7 @@ const DisplayComponent = () => {
       // Fetch the name for each proposal
       const populatedProposals = await Promise.all(
         proposals.map(async (proposal) => {
-          const createdByResponse = await axios.get(`http://localhost:8000/api/getproposals/${proposal._id}`);
+          const createdByResponse = await axios.get(`https://studyapplication.onrender.com/api/getproposals/${proposal._id}`);
           const createdByData = createdByResponse.data.data;
           return { ...proposal, createdBy: createdByData.createdBy };
         })

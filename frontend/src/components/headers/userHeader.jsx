@@ -47,7 +47,7 @@ const UserHeader = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/student/profile", {
+        const response = await fetch("https://studyapplication.onrender.com/api/student/profile", {
           headers: {
             "x-token": localStorage.getItem("token"),
           },

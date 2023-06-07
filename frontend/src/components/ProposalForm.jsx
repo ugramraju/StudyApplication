@@ -27,7 +27,7 @@ function ProposalForm({ onSearch }) {
     setLoading(true); // Set loading state to true
 
     axios
-      .post('http://localhost:8000/api/proposals', formData, {
+      .post('https://studyapplication.onrender.com/api/proposals', formData, {
         headers: {
           'x-token': token,
         },
