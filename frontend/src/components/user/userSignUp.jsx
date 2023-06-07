@@ -43,8 +43,8 @@ const UserSignUp = () => {
 
   return (
     <div className="box1">
-      <span id="errMsg-1">{errorMsg}</span>
-      <span id="errmessage">{successMsg}</span>
+      <span id="errMsg-1" style={{color:"red"}}>{errorMsg}</span>
+      <span id="errmessage" style={{color:"green"}}>{successMsg}</span>
       <h1 style={{fontSize:"1.5em"}}>Register in your Account</h1>
       <form id="form">
         <input
