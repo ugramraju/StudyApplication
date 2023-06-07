@@ -112,7 +112,9 @@ button {
     top: 30vh;
     width: 80%;
   }
-
+  .login_register_btn {
+    margin-bottom: 0;
+  }
   .heading_home_box {
     top: 5vh;
     right: 10%;
