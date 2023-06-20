@@ -10,7 +10,7 @@ const DisplayAllComponent = () => {
 
   useEffect(() => {
     fetchProposals();
-  });
+  },[]);
 
   const fetchProposals = async () => {
     try {
@@ -90,7 +90,7 @@ const DisplayAllComponent = () => {
                       </button>
                       <div className='iframe_image_container'>
                         <iframe
-                          src={note}
+                          src={note.replace(/^http:/, 'https:')}
                           title={`File ${i + 1}`}
                           width='200'
                           height='100'
