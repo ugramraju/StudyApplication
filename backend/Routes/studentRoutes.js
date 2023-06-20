@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const middleware = require("../Middleware/middleWare")
 const router = express.Router();
-const studentsSchema = require("../Model/studentsSchema");
 const User = require("../Model/teacherSchema")
 router.post("/student/register", async(req,res)=>{
     try{
