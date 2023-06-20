@@ -27,9 +27,9 @@ const UserLogin = () => {
       })
       .catch((error) => {
         console.log(error.response.data);
-        if (error.response.data === "User Not Found") {
+        if (error.response.data.msg === "User Not Found") {
           setErrorMsg("User not found");
-        } else if (error.response.data === "Invalid Credentials") {
+        } else if (error.response.data.msg === "Invalid Credentials") {
           setErrorMsg("Invalid credentials");
         } else {
           setErrorMsg("Login failed");
