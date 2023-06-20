@@ -22,9 +22,10 @@ const ForgotPasswordTeacher = () => {
 
   return (
     <>
+     <h1 style={{fontSize:"1.5em"}}>Forgot Password</h1>
       <form onSubmit={handleForgotPassword}>
-      {errorMsg && <p>{errorMsg}</p>}
-      {successMsg && <p>{successMsg}</p>}
+      {errorMsg && <p id="errMsg-1" style={{color:"red"}}>{errorMsg}</p>}
+      {successMsg && <p id="errmessage" style={{color:"green"}}>{successMsg}</p>}
         <input
           type="email"
           placeholder="Email"
