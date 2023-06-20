@@ -61,6 +61,7 @@ const UserLogin = () => {
           autoComplete="current-password"
         />
       </form>
+      <span>Forgot Password?</span>
       <button type="submit" id="btn" onClick={handleSubmit} className="login_register_btn">
           LOGIN
         </button>
