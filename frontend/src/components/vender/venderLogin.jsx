@@ -44,7 +44,7 @@ const VenderLogin = () => {
       <form id="form">
         <input
           type="text"
-          placeholder="Contact"
+          placeholder="Email / Contact"
           value={data.contact || data.email || ""}
           onChange={(e) => {
             const value = e.target.value;

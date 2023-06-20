@@ -96,6 +96,9 @@ button {
   text-align: left;
   padding-left: 5%;
 }
+a{
+  text-decoration: none;
+}
 /* Responsive Styles */
 
 /* Responsive Styles */

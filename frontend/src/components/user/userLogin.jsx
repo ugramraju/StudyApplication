@@ -46,7 +46,7 @@ const UserLogin = () => {
         id="name"
           type="text"
           name="name"
-          placeholder="Contact/Email"
+          placeholder="Email / Contact"
           value={data.contact || data.email || ""}
           onChange={(e) => {
             const value = e.target.value;
