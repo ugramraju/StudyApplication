@@ -109,7 +109,7 @@ async function sendResetEmail(email, resetToken) {
     service: "Gmail",
     auth: {
       user: "ugram.raju@gmail.com",
-      pass: "droehvttsguxpnwf",
+      pass: "dabwsnybvdudccdn",
     },
   });
 
