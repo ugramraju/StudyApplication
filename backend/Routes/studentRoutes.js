@@ -1,5 +1,6 @@
 const express = require("express");
 const studentsSchema = require("../Model/studentsScheam");
+const proposalSchema = require("../Model/proposalsSchema")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const middleware = require("../Middleware/middleWare")
@@ -76,7 +77,7 @@ router.get("/student/profile", middleware, async (req, res) => {
   });
   router.get("/getproposals", async (req, res) => {
     try {
-      const proposals = await studentsSchema
+      const proposals = await proposalSchema
         .find()
         .sort({ createdAt: -1 })
         .populate({
@@ -95,7 +96,7 @@ router.get("/student/profile", middleware, async (req, res) => {
   
   router.get("/getproposals/:id", async (req, res) => {
     try {
-      const proposal = await studentsSchema.findById(req.params.id)
+      const proposal = await proposalSchema.findById(req.params.id)
         .populate("createdBy", "name email contact");
   
       if (!proposal) {
@@ -153,7 +154,7 @@ async function sendResetEmail(email, resetToken) {
     from: "ugram.raju@gmail.com",
     to: email,
     subject: "Password Reset",
-    text: `Please click the following link to reset your password: http://localhost:8000/api/reset-password/${resetToken}`,
+    text: `Please click the following link to reset your password: https://studyapplication.onrender.com/api/reset-password/${resetToken}`,
   };
 
   try {
