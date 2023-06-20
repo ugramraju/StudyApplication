@@ -80,7 +80,7 @@ router.get("/teacher/profile", middleware, async (req, res) => {
 router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
   try {
-    const user = await userSchema.findOne({ email });
+    const user = await teacherScheam.findOne({ email });
     if (!user) {
       return res.status(404).send("User not found");
     }
@@ -138,7 +138,7 @@ router.post("/reset-password/:resetToken", async (req, res) => {
     const decoded = jwt.verify(resetToken, process.env.jwtSecret);
     const { user: { id: userId } } = decoded;
 
-    const user = await userSchema.findOne({ _id: userId });
+    const user = await teacherScheam.findOne({ _id: userId });
     if (!user) {
       return res.status(404).send("Invalid or expired reset token");
     }

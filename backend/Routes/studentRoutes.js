@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const middleware = require("../Middleware/middleWare")
 const router = express.Router();
-const proposalsSchema = require("../Model/proposalsSchema");
+const studentsSchema = require("../Model/studentsSchema");
 const User = require("../Model/teacherSchema")
 router.post("/student/register", async(req,res)=>{
     try{
@@ -77,7 +77,7 @@ router.get("/student/profile", middleware, async (req, res) => {
   });
   router.get("/getproposals", async (req, res) => {
     try {
-      const proposals = await proposalsSchema
+      const proposals = await studentsSchema
         .find()
         .sort({ createdAt: -1 })
         .populate({
@@ -96,7 +96,7 @@ router.get("/student/profile", middleware, async (req, res) => {
   
   router.get("/getproposals/:id", async (req, res) => {
     try {
-      const proposal = await proposalsSchema.findById(req.params.id)
+      const proposal = await studentsSchema.findById(req.params.id)
         .populate("createdBy", "name email contact");
   
       if (!proposal) {
@@ -117,7 +117,7 @@ router.get("/student/profile", middleware, async (req, res) => {
 router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
   try {
-    const user = await userSchema.findOne({ email });
+    const user = await studentsSchema.findOne({ email });
     if (!user) {
       return res.status(404).send("User not found");
     }
@@ -138,7 +138,7 @@ function generateResetToken(user) {
       email: user.email
     },
   };
-  const token = jwt.sign(payload, process.env.jwtSecreat, { expiresIn: "1hr" });
+  const token = jwt.sign(payload, process.env.jwtSecret, { expiresIn: "1hr" });
   return token;
 }
 async function sendResetEmail(email, resetToken) {
@@ -172,10 +172,10 @@ router.post("/reset-password/:resetToken", async (req, res) => {
   const { newPassword } = req.body;
 
   try {
-    const decoded = jwt.verify(resetToken, process.env.jwtSecreat);
+    const decoded = jwt.verify(resetToken, process.env.jwtSecret);
     const { user: { id: userId } } = decoded;
 
-    const user = await userSchema.findOne({ _id: userId });
+    const user = await studentsSchema.findOne({ _id: userId });
     if (!user) {
       return res.status(404).send("Invalid or expired reset token");
     }
@@ -200,7 +200,7 @@ router.get("/reset-password/:resetToken", async (req, res) => {
   const { resetToken } = req.params;
   try {
     const decoded = await new Promise((resolve, reject) => {
-      jwt.verify(resetToken, process.env.jwtSecreat, (err, decoded) => {
+      jwt.verify(resetToken, process.env.jwtSecret, (err, decoded) => {
         if (err) {
           reject(err);
         } else {
