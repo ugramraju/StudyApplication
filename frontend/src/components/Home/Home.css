@@ -92,7 +92,7 @@ input {
 button {
   cursor: pointer;
 }
-.forgot_password{
+.forgotPassword{
   text-align: left;
   padding-left: 5%;
 }

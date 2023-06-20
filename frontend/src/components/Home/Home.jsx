@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import VendorLogin from "../vender/venderLogin"
+import VendorLogin from "../vender/venderLogin";
 import UserLogin from "../user/userLogin";
 import VendorSignup from "../vender/venderSign";
 import UserSignup from "../user/userSignUp";
-import "./Home.css"
+import ForgotPassword from "../user/ForgotPassword";
+import ForgotPasswordTeacher from "../vender/ForgotPassword";
+import "./Home.css";
+
 const Home = () => {
   const [showVendorLogin, setShowVendorLogin] = useState(true);
   const [showUserLogin, setShowUserLogin] = useState(false);
   const [showVendorSignup, setShowVendorSignup] = useState(false);
   const [showUserSignup, setShowUserSignup] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [showForgotPasswordTeacher, setShowForgotPasswordTeacher] = useState(false);
 
   const handleVendorClick = () => {
     setShowVendorLogin(true);
     setShowUserLogin(false);
     setShowVendorSignup(false);
     setShowUserSignup(false);
+    setShowForgotPassword(false);
+    setShowForgotPasswordTeacher(false);
   };
 
   const handleUserClick = () => {
@@ -22,6 +29,8 @@ const Home = () => {
     setShowUserLogin(true);
     setShowVendorSignup(false);
     setShowUserSignup(false);
+    setShowForgotPassword(false);
+    setShowForgotPasswordTeacher(false);
   };
 
   const handleVendorSignupClick = () => {
@@ -29,6 +38,8 @@ const Home = () => {
     setShowUserLogin(false);
     setShowVendorSignup(true);
     setShowUserSignup(false);
+    setShowForgotPassword(false);
+    setShowForgotPasswordTeacher(false);
   };
 
   const handleUserSignupClick = () => {
@@ -36,6 +47,26 @@ const Home = () => {
     setShowUserLogin(false);
     setShowVendorSignup(false);
     setShowUserSignup(true);
+    setShowForgotPassword(false);
+    setShowForgotPasswordTeacher(false);
+  };
+
+  const handleForgotPasswordClick = () => {
+    setShowVendorLogin(false);
+    setShowUserLogin(false);
+    setShowVendorSignup(false);
+    setShowUserSignup(false);
+    setShowForgotPassword(true);
+    setShowForgotPasswordTeacher(false);
+  };
+
+  const handleForgotPasswordTeacherClick = () => {
+    setShowVendorLogin(false);
+    setShowUserLogin(false);
+    setShowVendorSignup(false);
+    setShowUserSignup(false);
+    setShowForgotPassword(false);
+    setShowForgotPasswordTeacher(true);
   };
 
   return (
@@ -46,13 +77,17 @@ const Home = () => {
         <div className="home_btn_container">
           <button
             onClick={handleVendorClick}
-            className={showVendorLogin ? "active" : ""}
+            className={`${showVendorLogin ? "active" : ""} ${
+              showForgotPasswordTeacher ? "highlight" : ""
+            }`}
           >
             Teacher
           </button>
           <button
             onClick={handleUserClick}
-            className={showUserLogin ? "active" : ""}
+            className={`${showUserLogin ? "active" : ""} ${
+              showForgotPassword ? "highlight" : ""
+            }`}
           >
             Student
           </button>
@@ -61,11 +96,16 @@ const Home = () => {
         {showVendorLogin && (
           <>
             <VendorLogin />
+            <div
+              className={`forgotPassword ${
+                showForgotPasswordTeacher ? "highlight" : ""
+              }`}
+              onClick={handleForgotPasswordTeacherClick}
+            >
+              Forgot Password?
+            </div>
             {!showVendorSignup && (
-              <div
-                className="createAccount"
-                onClick={handleVendorSignupClick}
-              >
+              <div className="createAccount" onClick={handleVendorSignupClick}>
                 Create Account
               </div>
             )}
@@ -75,6 +115,14 @@ const Home = () => {
         {showUserLogin && (
           <>
             <UserLogin />
+            <div
+              className={`forgotPassword ${
+                showForgotPassword ? "highlight" : ""
+              }`}
+              onClick={handleForgotPasswordClick}
+            >
+              Forgot Password?
+            </div>
             {!showUserSignup && (
               <div className="createAccount" onClick={handleUserSignupClick}>
                 Create Account
@@ -96,6 +144,24 @@ const Home = () => {
           <>
             <UserSignup />
             <div className="createAccount" onClick={handleUserClick}>
+              SignIn
+            </div>
+          </>
+        )}
+
+        {showForgotPassword && (
+          <>
+            <ForgotPassword />
+            <div className="createAccount" onClick={handleUserClick}>
+              SignIn
+            </div>
+          </>
+        )}
+
+        {showForgotPasswordTeacher && (
+          <>
+            <ForgotPasswordTeacher />
+            <div className="createAccount" onClick={handleVendorClick}>
               SignIn
             </div>
           </>
