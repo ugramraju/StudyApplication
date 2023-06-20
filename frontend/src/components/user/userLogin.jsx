@@ -46,9 +46,12 @@ const UserLogin = () => {
         id="name"
           type="text"
           name="name"
-          placeholder="Contact"
-          value={data.contact || ""}
-          onChange={(e) => setData({ ...data, contact: e.target.value })}
+          placeholder="Contact/Email"
+          value={data.contact || data.email || ""}
+          onChange={(e) => {
+            const value = e.target.value;
+            setData({ ...data, contact: value, email: value });
+          }}
         />
         <br />
         <input

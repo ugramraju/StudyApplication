@@ -45,8 +45,11 @@ const VenderLogin = () => {
         <input
           type="text"
           placeholder="Contact"
-          value={data.contact || ""}
-          onChange={(e) => setData({ ...data, contact: e.target.value })}
+          value={data.contact || data.email || ""}
+          onChange={(e) => {
+            const value = e.target.value;
+            setData({ ...data, contact: value, email: value });
+          }}
         />
         <br />
         <input

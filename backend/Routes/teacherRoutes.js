@@ -35,7 +35,7 @@ router.post("/teacher/register", async(req,res)=>{
 router.post("/teacher/login", async (req, res) => {
     try {
       const { contact, password } = req.body;
-      let exists = await teacherScheam.findOne({ contact });
+      let exists = await teacherScheam.findOne({ $or: [{ email }, { contact }] });
       if (!exists) {
         return res.status(400).json({ msg: "User Not Found" });
       }
