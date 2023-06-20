@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 const VenderLogin = () => {
   const navigate = useNavigate();
@@ -55,9 +55,11 @@ const VenderLogin = () => {
           value={data.password || ""}
           onChange={(e) => setData({ ...data, password: e.target.value })}
           autoComplete="current-password"
-        />  
+        />
+        <p className="forgot_password">
+          <Link to="/teacher-forgot-password">Forgot Password?</Link></p>
       </form>
-      <span>Forgot Password?</span>
+      
       <button type="submit" id="btn" onClick={handleSubmit} className="login_register_btn">
           LOGIN
         </button>

@@ -21,7 +21,11 @@ const teacherSchema = new mongoose.Schema({
     confirmPassword:{
         type: String,
         required: true,
-    }
+    },
+    resetToken: {
+        type: String,
+        default: null,
+      },
     
 })
 module.exports = mongoose.model("Teacher", teacherSchema)

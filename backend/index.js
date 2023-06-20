@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
 const fileupload = require("express-fileupload");
-
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: false}))
 const studentRouter = require("./Routes/studentRoutes");
 const teacherRouter = require("./Routes/teacherRoutes");
 const proposalsRouter = require("./Routes/proposalsRoutes");

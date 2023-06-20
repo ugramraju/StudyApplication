@@ -92,7 +92,10 @@ input {
 button {
   cursor: pointer;
 }
-
+.forgot_password{
+  text-align: left;
+  padding-left: 5%;
+}
 /* Responsive Styles */
 
 /* Responsive Styles */
