@@ -33,8 +33,7 @@ const ForgotPasswordTeacher = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <br />
-        <button><Link to="/">Cancel</Link></button>
-        <button type="submit">Reset Password</button>
+        <button className="login_register_btn" type="submit" >Reset Password</button>
       </form>
     </>
   );
