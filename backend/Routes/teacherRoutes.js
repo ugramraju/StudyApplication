@@ -2,6 +2,7 @@ const express = require("express");
 const teacherScheam = require("../Model/teacherSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 const middleware = require("../Middleware/middleWare")
 const router = express.Router();
 

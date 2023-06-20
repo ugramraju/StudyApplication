@@ -3,6 +3,7 @@ const studentsSchema = require("../Model/studentsScheam");
 const proposalSchema = require("../Model/proposalsSchema")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 const middleware = require("../Middleware/middleWare")
 const router = express.Router();
 const User = require("../Model/teacherSchema")
