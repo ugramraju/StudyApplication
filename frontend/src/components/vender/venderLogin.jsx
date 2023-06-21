@@ -47,8 +47,8 @@ const VenderLogin = () => {
           placeholder="Email / Contact"
           value={data.contact || data.email || ""}
           onChange={(e) => {
-            const value = e.target.value;
-            setData({ ...data, contact: value, email: value });
+            const values = e.target.value;
+            setData({ ...data, contact: values, email: values });
           }}
         />
         <br />
