@@ -10,7 +10,7 @@ const ForgotPasswordTeacher = () => {
     e.preventDefault();
 
     try {
-      await axios.post("https://studyapplication.onrender.com/api/forgot-password", { email });
+      await axios.post("https://studyapplication.onrender.com/api/teacher/forgot-password", { email });
       setErrorMsg("");
       setSuccessMsg("Password reset email sent");
     } catch (error) {
