@@ -78,7 +78,7 @@ router.get("/teacher/profile", middleware, async (req, res) => {
 
   
 // Forgot Password
-router.post("/forgot-password", async (req, res) => {
+router.post("/teacher/forgot-password", async (req, res) => {
   const { email } = req.body;
   try {
     const user = await teacherScheam.findOne({ email });
@@ -118,7 +118,7 @@ async function sendResetEmail(email, resetToken) {
     from: "ugram.raju@gmail.com",
     to: email,
     subject: "Password Reset",
-    text: `Please click the following link to reset your password: https://studyapplication.onrender.com/api/reset-password/${resetToken}`,
+    text: `Please click the following link to reset your password: https://studyapplication.onrender.com/api/teacher/reset-password/${resetToken}`,
   };
 
   try {
@@ -131,7 +131,7 @@ async function sendResetEmail(email, resetToken) {
 }
 
 // Reset Password
-router.post("/reset-password/:resetToken", async (req, res) => {
+router.post("/teacher/reset-password/:resetToken", async (req, res) => {
   const { resetToken } = req.params;
   const { newPassword } = req.body;
 
@@ -160,7 +160,7 @@ router.post("/reset-password/:resetToken", async (req, res) => {
 });
 
 
-router.get("/reset-password/:resetToken", async (req, res) => {
+router.get("/teacher/reset-password/:resetToken", async (req, res) => {
   const { resetToken } = req.params;
   try {
     const decoded = await new Promise((resolve, reject) => {
