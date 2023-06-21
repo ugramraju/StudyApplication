@@ -43,7 +43,9 @@ const VenderLogin = () => {
       <h1 style={{fontSize:"1.5em"}}>Sign in your Account</h1>
       <form id="form">
         <input
+        id="name"
           type="text"
+          name="name"
           placeholder="Email / Contact"
           value={data.contact || data.email || ""}
           onChange={(e) => {
@@ -53,7 +55,9 @@ const VenderLogin = () => {
         />
         <br />
         <input
+        id="password"
           type="password"
+          name="password"
           placeholder="Password"
           value={data.password || ""}
           onChange={(e) => setData({ ...data, password: e.target.value })}

@@ -25,6 +25,6 @@ const studentsSchema = new mongoose.Schema({
     resetToken: {
         type: String,
         default: null,
-      },
+      }
 })
 module.exports = mongoose.model("Student", studentsSchema)
