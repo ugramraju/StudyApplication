@@ -106,7 +106,7 @@ const DisplayComponent = () => {
                     <div key={i} className="fileContainer">
                       <button onClick={() => handleFileClicked(note)} className="opnbtn">Open File {i + 1}</button>
                       <div className="iframe_image_container">
-                        <iframe src={note} title={`File ${i + 1}`} width="200" height="100" />
+                        <iframe  src={note.replace(/^http:/, 'https:')} title={`File ${i + 1}`} width="200" height="100" />
                       </div>
                     </div>
                   ))}
