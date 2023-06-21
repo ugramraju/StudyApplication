@@ -47,7 +47,7 @@ const DisplayComponent = () => {
     try {
       const confirmed = window.confirm("Are you sure you want to delete this File?");
       if (confirmed) {
-        await axios.delete(`http://localhost:8000/api/proposals/${id}`, {
+        await axios.delete(`https://studyapplication.onrender.com/api/proposals/${id}`, {
           headers: {
             'x-token': token,
           }
