@@ -28,6 +28,9 @@ body {
   margin-top: auto;
   margin-bottom: auto;
 }
-.icons-container .vender-pic {
-  width: em;
+
+@media (max-width: 480px) {
+  .vender-box {
+    margin-right: 1em;
+  }
 }
